@@ -7,7 +7,7 @@ const Home = () => {
       <Head>
         <title>TouchMyLike</title>
         <meta name="keywords" content="TouchMyLike" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/image/touchmylike_logo.ico" />
       </Head>
       <div>
         <h1 className={styles.title}>

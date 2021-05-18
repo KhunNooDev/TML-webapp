@@ -6,7 +6,7 @@ const Register = () => {
             <Head>
                 <title>TouchMyLike | Register</title>
                 <meta name="keywords" content="TouchMyLike" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/image/touchmylike_logo.ico" />
             </Head>
             <div>
 
