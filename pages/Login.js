@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 const Login = () => {
     return (
@@ -12,7 +12,7 @@ const Login = () => {
 
             </div>
         </>
-    );
+    )
 }
 
-export default Login;
+export default Login

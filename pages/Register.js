@@ -1,6 +1,11 @@
-import Head from "next/head";
-import { Form, Button, Col, Row } from 'react-bootstrap';
-import { useState } from 'react';
+import Head from "next/head"
+import {
+    Form,
+    FormGroup,
+    Button,
+    Label,
+    Input
+} from 'reactstrap'
 
 const Register = () => {
     return (
@@ -10,8 +15,47 @@ const Register = () => {
                 <meta name="keywords" content="TouchMyLike" />
                 <link rel="icon" href="/image/touchmylike_logo.ico" />
             </Head>
-            <div>
-                <Form>
+            <Form>
+                <FormGroup>
+                    <Label>ชื่อผู้ใช้งาน</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your username' />
+                </FormGroup>
+                <FormGroup>
+                    <Label>ชื่อ</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your name' />
+                </FormGroup>
+                <FormGroup>
+                    <Label>วันเกิด</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your birthday' />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Email</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your email' />
+                </FormGroup>
+                <FormGroup>
+                    <Label>รหัสผ่าน</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your password' />
+                </FormGroup>
+                <FormGroup>
+                    <Label>ยืนยันรหัสผ่าน</Label>
+                    <Input
+                        type='text'
+                        placeholder='Type your confirm password' />
+                </FormGroup>
+                <FormGroup>
+                    <Button color='primary' type='submit'>สมัครสมาชิก</Button>
+                </FormGroup>
+                {/* <Form>
                     <Form.Group as={Row} controlId="formUsername">
                         <Form.Label column sm={2}>ชื่อผู้ใช้งาน</Form.Label>
                         <Col sm={10}>
@@ -58,10 +102,10 @@ const Register = () => {
                             <Button type="submit">สมัครสมาชิก</Button>
                         </Col>
                     </Form.Group>
-                </Form>
-            </div>
+                </Form> */}
+            </Form>
         </>
-    );
+    )
 }
 
-export default Register;
+export default Register

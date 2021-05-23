@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import Head from 'next/head';
+import Head from 'next/head'
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
       </div>
     </>
 
-  );
+  )
 }
 
-export default Home;
+export default Home

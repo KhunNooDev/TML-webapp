@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import Layout from './components/Layout'
-import { Container } from 'react-bootstrap';
+import { Container } from 'reactstrap'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,12 +1,12 @@
 import Link from "next/link"
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 const NotFound = () => {
-    const router = useRouter();
+    const router = useRouter()
 
     useEffect(() => {
         setTimeout(() => {
-            router.push('/');
+            router.push('/')
         }, 3000)
     })
     return (
@@ -16,7 +16,7 @@ const NotFound = () => {
             <p>Go to the <Link href="/"><a>Homepage</a></Link></p>
         </div>
 
-    );
+    )
 }
 
-export default NotFound;
+export default NotFound

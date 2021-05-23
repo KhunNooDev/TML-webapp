@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 const About = () => {
     return (
@@ -12,7 +12,7 @@ const About = () => {
                 <h1>About</h1>
             </div>
         </>
-    );
+    )
 }
 
-export default About;
+export default About
