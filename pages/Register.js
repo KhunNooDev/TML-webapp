@@ -1,10 +1,8 @@
 import Head from "next/head"
+import Link from "next/link"
 import {
-    Form,
-    FormGroup,
-    Button,
-    Label,
-    Input
+    Form, FormGroup, FormText,
+    Col, Input, Label, Button
 } from 'reactstrap'
 
 const Register = () => {
@@ -15,94 +13,59 @@ const Register = () => {
                 <meta name="keywords" content="TouchMyLike" />
                 <link rel="icon" href="/image/touchmylike_logo.ico" />
             </Head>
+            <center><h2>สมัครสมาชิก</h2></center>
+            <br />
             <Form>
-                <FormGroup>
-                    <Label>ชื่อผู้ใช้งาน</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your username' />
+                <FormGroup row>
+                    <Label for="forUsername" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>ชื่อผู้ใช้งาน</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="text" name="username" id="forUsername" placeholder="Your username" />
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label>ชื่อ</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your name' />
+                <FormGroup row>
+                    <Label for="forName" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>ชื่อ</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="text" name="name" id="forName" placeholder="Your name" />
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label>วันเกิด</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your birthday' />
+                <FormGroup row>
+                    <Label for="forBirthday" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>วันเกิด</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="date" name="birthday" id="forBirthday" placeholder="Your birthday" />
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label>Email</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your email' />
+                <FormGroup row>
+                    <Label for="forEmail" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>Email</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="email" name="email" id="forEmail" placeholder="Your email" />
+                        <FormText>Your username is most likely your email.</FormText>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label>รหัสผ่าน</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your password' />
+                <FormGroup row>
+                    <Label for="forPassword" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>รหัสผ่าน</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="password" name="password" id="forPassword" placeholder="Your password" />
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label>ยืนยันรหัสผ่าน</Label>
-                    <Input
-                        type='text'
-                        placeholder='Type your confirm password' />
+                <FormGroup row>
+                    <Label for="forCPassword" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>ยืนยันรหัสผ่าน</Label>
+                    <Col xs={8} sm={4}>
+                        <Input type="password" name="password" id="forCPassword" placeholder="Your confirm password" />
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Button color='primary' type='submit'>สมัครสมาชิก</Button>
-                </FormGroup>
-                {/* <Form>
-                    <Form.Group as={Row} controlId="formUsername">
-                        <Form.Label column sm={2}>ชื่อผู้ใช้งาน</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="text" placeholder="Username" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formName">
-                        <Form.Label column sm={2}>ชื่อ</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="text" placeholder="Name" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formName">
-                        <Form.Label column sm={2}>วันเกิด</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="text" placeholder="Name" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formEmail">
-                        <Form.Label column sm={2}>E-mail</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="email" placeholder="Email" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formPassword">
-                        <Form.Label column sm={2}>รหัสผ่าน</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Col>
-                        <Form.Text id="passwordHelpBlock" muted>
-                            Your password must be 8-20 characters long, contain letters and numbers, and
-                            must not contain spaces, special characters, or emoji.
-  </Form.Text>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formCPassword">
-                        <Form.Label column sm={2}>ยืนยันรหัสผ่าน</Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="password" placeholder="Comfirm Password" />
-                        </Col>
-                    </Form.Group>
 
-                    <Form.Group as={Row}>
-                        <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="submit">สมัครสมาชิก</Button>
-                        </Col>
-                    </Form.Group>
-                </Form> */}
+                <FormGroup check row>
+                    <Col sm={{ size: 5, offset: 5 }}>
+                        <Button>สมัครสมาชิก</Button>
+                    </Col>
+                </FormGroup>
+                <br />
+                <center>
+                    หากมีบัญชีผู้ใช้เเล้ว?&nbsp;
+                    <Link href="/Login">
+                        <a>เข้าสู่ระบบ</a>
+                    </Link>
+                </center>
             </Form>
         </>
     )
