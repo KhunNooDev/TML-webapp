@@ -46,6 +46,12 @@ const Header = () => {
                 </Nav>
                 <Nav>
                     <NavItem>
+                        <Link href='/Schedule'><NavLink>ปฏิทินของฉัน</NavLink></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link href='/Dashboard'><NavLink>เเผงควบคุม</NavLink></Link>
+                    </NavItem>
+                    <NavItem>
                         <Link href='/Login'><NavLink>เข้าสู่ระบบ</NavLink></Link>
                     </NavItem>
                     <NavItem>
