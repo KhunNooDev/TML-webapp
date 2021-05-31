@@ -12,8 +12,8 @@ const Schedule = () => {
         setCalendar(buildCalendar(value))
     }, [value])
 
-    const startDay = value.clone().startOf('month').startOf('week')
-    const endDay = value.clone().endOf('month').endOf('week')
+    // const startDay = value.clone().startOf('month').startOf('week')
+    // const endDay = value.clone().endOf('month').endOf('week')
 
     return (
         <>
@@ -25,7 +25,7 @@ const Schedule = () => {
             <div className='calendar-container'>
                 <div className="calendar-header">
                     <h1>
-                        พฤกษภาคม
+                        มิถุนายน
       <button>▾</button>
                     </h1>
                     <p>2564</p>
