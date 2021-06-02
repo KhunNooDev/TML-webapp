@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import moment from 'moment'
-import buildCalendar from './components/Build'
+import buildCalendar from '../components/Build'
 
 const Schedule = () => {
 

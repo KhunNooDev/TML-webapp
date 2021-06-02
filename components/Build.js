@@ -3,6 +3,7 @@ export default function buildCalendar(value) {
     const endDay = value.clone().endOf('month').endOf('week')
     const day = startDay.clone().subtract(1, 'day')
     const calendar = []
+
     while (day.isBefore(endDay, 'day')) {
         calendar.push(
             Array(7)
