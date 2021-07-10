@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
+import { isAuth } from '../actions/auth'
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       </Head>
       <div>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">TML!</a>
+          Welcome to <a href="https://nextjs.org">TML!</a> <br />
+          { isAuth() }
         </h1>
       </div>
     </>

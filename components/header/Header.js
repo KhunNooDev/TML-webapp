@@ -9,6 +9,8 @@ import {
     NavItem,
     NavLink
 } from 'reactstrap'
+import Router from 'next/router'
+import { isAuth, signout } from '../../actions/auth'
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +25,7 @@ const Header = () => {
                     height="30"
                     className="d-inline-block align-top"
                 />{' '}
-               TouchMyLike
+                TouchMyLike
             </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
@@ -45,18 +47,36 @@ const Header = () => {
                     </NavItem>
                 </Nav>
                 <Nav>
-                    <NavItem>
-                        <Link href='/Schedule'><NavLink>ปฏิทินของฉัน</NavLink></Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link href='/Dashboard'><NavLink>เเผงควบคุม</NavLink></Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link href='/Login'><NavLink>เข้าสู่ระบบ</NavLink></Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link href='/Register'><NavLink>สมัครสมาชิก</NavLink></Link>
-                    </NavItem>
+                    {
+                        !isAuth() && (
+                            <>
+                                <NavItem>
+                                    <Link href='/Login'>
+                                        <NavLink>เข้าสู่ระบบ</NavLink>
+                                    </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link href='/Register'>
+                                        <NavLink>สมัครสมาชิก</NavLink>
+                                    </Link>
+                                </NavItem>
+                            </>
+                        )
+                    }{
+                        isAuth() && (
+                            <>
+                                <NavItem>
+                                    <Link href='/Schedule'><NavLink>ปฏิทินของฉัน</NavLink></Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link href='/Dashboard'><NavLink>เเผงควบคุม</NavLink></Link>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink onClick={() => signout(() => Router.replace(`/Login`))}>ออกจากระบบ</NavLink>
+                                </NavItem>
+                            </>
+                        )
+                    }
                 </Nav>
             </Collapse>
         </Navbar>

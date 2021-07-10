@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react'
+import { signin, authenticate, isAuth } from '../actions/auth'
+import Router from 'next/router'
 import Head from "next/head"
 import Link from "next/link"
 import {
@@ -6,6 +9,37 @@ import {
 } from 'reactstrap'
 
 const Login = () => {
+
+    const [values, setValues] = useState({
+        username: '',
+        password: '',
+    })
+
+    const { username, password } = values
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        setValues({ ...values })
+        const user = { username, password }
+        signin(user).then(data => {
+            if(data.error) {
+                console.log('Error signup')
+            } else {
+                authenticate(data, () => {
+                    if(isAuth()) {
+                        Router.push('/')
+                        console.log('Pass')
+                    } else {
+                        console.log('Error')
+                    }
+                })
+            }
+        })
+    }
+
+    const handleChange = name => e => {
+        setValues({ ...values, error: false, [name]: e.target.value })
+    }
     return (
         <>
             <Head>
@@ -15,17 +49,29 @@ const Login = () => {
             </Head>
             <center><h2>เข้าสู่ระบบ</h2></center>
             <br />
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <FormGroup row>
                     <Label for="forUsername" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>ชื่อผู้ใช้งาน</Label>
                     <Col xs={8} sm={4}>
-                        <Input type="text" name="username" id="forUsername" placeholder="Your username" />
+                        <Input
+                            value={username}
+                            onChange={handleChange('username')}
+                            type="text"
+                            name="username"
+                            id="forUsername"
+                            placeholder="Your username" />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label for="forPassword" xs={4} sm={{ size: 3, offset: 3 }} lg={{ size: 2, offset: 3 }}>รหัสผ่าน</Label>
                     <Col xs={8} sm={4}>
-                        <Input type="password" name="password" id="forPassword" placeholder="Your password" />
+                        <Input
+                            value={password}
+                            onChange={handleChange('password')}
+                            type="password"
+                            name="password"
+                            id="forPassword"
+                            placeholder="Your password" />
                     </Col>
                 </FormGroup>
 
